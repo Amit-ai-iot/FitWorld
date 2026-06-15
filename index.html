@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VTakeCare – World of Fitness</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: #0d0d0d;
+        color: #fff;
+        overflow-x: hidden;
+    }
+
+    /* Smooth fade-in */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 1.2s ease;
+    }
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 100vh;
+        background: linear-gradient(135deg, rgba(0,255,180,0.15), rgba(0,140,255,0.15)),
+                    url('https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=1600&q=80');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 8%;
+        position: relative;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        line-height: 1.1;
+        max-width: 700px;
+    }
+
+    .hero p {
+        font-size: 1.3rem;
+        max-width: 550px;
+        margin-top: 20px;
+        opacity: 0.85;
+    }
+
+    .cta-btn {
+        margin-top: 35px;
+        padding: 15px 40px;
+        background: linear-gradient(135deg, #00ffb4, #00a2ff);
+        border: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        color: #000;
+        transition: 0.3s;
+    }
+    .cta-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(0,255,200,0.5);
+    }
+
+    /* Section */
+    .section {
+        padding: 100px 8%;
+        text-align: center;
+    }
+
+    .section h2 {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+    }
+
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+    }
+
+    .feature-box {
+        padding: 30px;
+        background: rgba(255,255,255,0.05);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.1);
+        transition: 0.3s;
+    }
+
+    .feature-box:hover {
+        transform: translateY(-10px);
+        border-color: #00ffb4;
+    }
+
+    .feature-box h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .footer {
+        padding: 40px;
+        text-align: center;
+        opacity: 0.6;
+        font-size: 0.9rem;
+    }
+
+    @media(max-width: 768px) {
+        .hero h1 { font-size: 2.8rem; }
+        .hero p { font-size: 1.1rem; }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero fade-in">
+    <h1>Welcome to the World of Fitness</h1>
+    <p>Your body is the most powerful machine ever built.  
+       VTakeCare helps you unlock its full potential with science‑driven workouts, 
+       personalized nutrition, and lifestyle mastery.</p>
+    <button class="cta-btn">Join the Movement</button>
+</section>
+
+<!-- FEATURES -->
+<section class="section fade-in">
+    <h2>Why VTakeCare?</h2>
+    <div class="features">
+        <div class="feature-box">
+            <h3>AI‑Powered Fitness</h3>
+            <p>Workouts that adapt to your body, mood, sleep, and performance.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Smart Nutrition</h3>
+            <p>Personalized diet plans based on your metabolism and lifestyle.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Deep Health Insights</h3>
+            <p>Upload blood reports and get actionable, doctor‑grade analysis.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Mind & Recovery</h3>
+            <p>Yoga, meditation, breathwork, and recovery routines that restore balance.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Track Everything</h3>
+            <p>Water, food, sleep, workouts, mood — all in one beautiful dashboard.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Become Your Best Self</h3>
+            <p>Daily nudges, challenges, and progress insights keep you unstoppable.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer fade-in">
+    © 2026 VTakeCare – The Future of Fitness
+</div>
+
+<script>
+$(document).ready(function() {
+    // Fade-in on scroll
+    function reveal() {
+        $('.fade-in').each(function() {
+            var top = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+
+            if (top < scroll + windowHeight - 100) {
+                $(this).addClass('visible');
+            }
+        });
+    }
+    reveal();
+    $(window).on('scroll', reveal);
+});
+</script>
+
+</body>
+</html>
